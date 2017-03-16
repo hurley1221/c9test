@@ -26,7 +26,11 @@ $nr = mysqli_num_rows($result);
 if ($nr > 0){
     while($row = mysqli_fetch_assoc($result)) {
         echo "Question: " . $row["question"]. "<br>";
-        echo "A: " . $row["answer1"]. "<br>";
+        echo "A: " . $row["answer1"] . "<br>";
+        echo "B: " . $row["answer2"] . "<br>";
+        echo "C: " . $row["answer3"] . "<br>";
+        echo "D: " . $row["answer4"] . "<br>";
+        
     }
 }
 else{
