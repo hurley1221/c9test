@@ -35,7 +35,9 @@
 <label> Password: </label> <input type="password" name="psw"><br>
 <input type="submit" value=" Login "><br>
 <center>
-<font color="Red"></fotn><?php echo($error); ?></font>
+<font color="Red">
+    <?php echo($error); ?>
+</font>
 </center>
 
 </form>
