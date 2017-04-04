@@ -16,6 +16,8 @@
         
         if($count == 1) {
             $_SESSION['login_user'] = $uname;
+            $sql = "insert into login_record(username, logindt) values('$uname', now())";
+            mysqli_query($connection, $sql);
             header("location: welcome.php");
         }else {
             $error = "Your Login Name or Password is invalid";
@@ -26,11 +28,18 @@
 <html>
 <body>
 <h1>Login Page</h1>
+<h2><a href = "register.php">Register</a></h2>
+
 <form action ="" method="post">
-<label> Username: </label><input type="text" name="uname"><br>
-<label> Password: </label><input type="password" name="psw"><br>
+<label> Username: </label> <input type="text" name="uname"><br>
+<label> Password: </label> <input type="password" name="psw"><br>
 <input type="submit" value=" Login "><br>
-<?php echo($error); ?>
+<center>
+<font color="Red"></fotn><?php echo($error); ?></font>
+</center>
+
 </form>
+
+
 </body>
 </html>
